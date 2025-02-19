@@ -1,32 +1,36 @@
 ---
 import Globe from "../components/Globe";
-import BasicLayout from "../layouts/BasicLayout.astro";
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card/index.astro";
 ---
 
 <script>
   import { timeline, type TimelineDefinition } from "motion";
+  import { loaderAnimation } from "../lib/constants";
 
-  const sequence = [
-    [
-      ".loaderRef",
-      { opacity: [1, 0], pointerEvents: "none" },
-      { easing: "ease-out" },
-    ],
-  ];
-
+  const sequence = [loaderAnimation];
   timeline(sequence as TimelineDefinition);
 </script>
 
-<BasicLayout
-  title="Gianmarco Cavallo - Visited Countries"
-  description="A 3d globe showing countries that I have visited so far"
-  page="travel"
+<Layout
+  title="Neha Chaudhari - Mumbai, India"
+  description="Explore Mumbai, India – a vibrant city known for its rich culture, bustling markets, and technological advancements."
+  page="mumbai"
 >
-  <a
-    href="/"
-    class="text-white absolute bg-neutral-900 hover:bg-neutral-800 top-4 left-4 px-4 py-2 border-1 border-solid border-neutral-600 rounded-lg"
-    >Back</a
+  <main
+    class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-cols-2 lg:gap-4 lg:max-h-[800px]"
   >
-
-  <Globe client:load />
-</BasicLayout>
+    <Card colSpan="md:col-span-1" rowSpan="md:row-span-2" class="flex justify-center items-center">
+      <Globe client:load />
+    </Card>
+    <Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
+      <h2 class="text-3xl font-bold">Welcome to Mumbai, India</h2>
+      <p class="mt-2 text-lg">
+        Mumbai, the financial capital of India, is a bustling metropolis known for its diverse culture, historic landmarks, and thriving tech industry. It is home to Bollywood, vibrant street food, and some of the top technological hubs in the country.
+      </p>
+      <p class="mt-2 text-lg">
+        Working with Thingbits Electronics Pvt Ltd, a dynamic startup in Mumbai, was an immense experience that provided invaluable insights, hands-on challenges, and opportunities for both technical and professional growth. As a thriving hub for startups and innovation, Mumbai has played a significant role in shaping my journey as a software developer. The city's blend of modern infrastructure and deep-rooted traditions continues to be a source of inspiration.
+      </p>
+    </Card>
+  </main>
+</Layout>

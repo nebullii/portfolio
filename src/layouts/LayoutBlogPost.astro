@@ -32,3 +32,48 @@ const { title, description, pubDate, minutesRead, url } = Astro.props;
     </article>
   </main>
 </BasicLayout>
+
+<style>
+  /* Custom Code Block Styling */
+  pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 14px;
+    font-family: "Fira Code", monospace;
+    line-height: 1.5;
+    position: relative;
+  }
+
+  /* Code Block Header */
+  pre::before {
+    content: "Code";
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 12px;
+    color: #c792ea;
+    font-weight: bold;
+  }
+
+  /* Syntax Highlighting */
+  code {
+    background-color: rgba(135, 131, 120, 0.15);
+    color: #e06c75;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  /* Scrollbar Styling */
+  pre::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  pre::-webkit-scrollbar-thumb {
+    background: #4b5263;
+    border-radius: 4px;
+  }
+</style>
