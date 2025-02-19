@@ -1,7 +1,7 @@
 ---
 title: "Tic-Tac-Toe Game"
 description: "A simple Tic-Tac-Toe game built with React."
-pubDate: 2025-02-18
+pubDate: 2024-11-18
 category: "projects"
 draft: false
 ---
