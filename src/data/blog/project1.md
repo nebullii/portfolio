@@ -1,7 +1,7 @@
 ---
 title: "Online Marketplace - Django"
 description: "A showcase of my development projects."
-pubDate: 2025-02-18
+pubDate: 2024-11-15
 category: "portfolio"
 draft: false
 ---
