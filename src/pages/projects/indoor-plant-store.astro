@@ -1,0 +1,105 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card/index.astro";
+---
+
+<Layout
+  title="Indoor Plant Store - Neha Chaudhari"
+  description="A Django-based e-commerce platform for indoor plants."
+>
+  <main class="text-white m-auto p-8 max-w-4xl py-12">
+    <a
+      href="/projects"
+      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 mb-8 border-1 border-solid border-neutral-600 rounded-lg inline-block"
+      >Back to Projects</a
+    >
+
+    <div class="space-y-8">
+      <section>
+        <h1 class="text-4xl font-bold mb-4">Indoor Plant Store</h1>
+        <p class="text-xl text-neutral-400 mb-6">
+          A Django-based e-commerce platform for buying and selling indoor plants. This project is designed to help plant enthusiasts and small businesses easily manage and explore a curated collection of indoor plants—with a clean interface and seamless payment integration via Stripe.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">Python</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">Django</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">HTML5</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">CSS3</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">Stripe</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">Bootstrap</span>
+        </div>
+        <div class="flex gap-4">
+          <a
+            href="https://github.com/nebullii/Indoor-Plant"
+            target="_blank"
+            class="text-blue-400 hover:text-blue-300"
+            >View on GitHub →</a
+          >
+          <a
+            href="https://nevus.pythonanywhere.com/"
+            target="_blank"
+            class="text-blue-400 hover:text-blue-300"
+            >Live Demo →</a
+          >
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Card title="User Authentication">
+            <p class="text-sm text-neutral-400">
+              Secure registration and login system for users and administrators.
+            </p>
+          </Card>
+          <Card title="Product Catalog">
+            <p class="text-sm text-neutral-400">
+              Browse, search, and filter indoor plants with detailed product pages.
+            </p>
+          </Card>
+          <Card title="Shopping Cart">
+            <p class="text-sm text-neutral-400">
+              Add/remove products and proceed to secure checkout with Stripe integration.
+            </p>
+          </Card>
+          <Card title="Admin Dashboard">
+            <p class="text-sm text-neutral-400">
+              Manage plant listings, orders, and inventory through an intuitive admin panel.
+            </p>
+          </Card>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Technical Implementation</h2>
+        <div class="space-y-4">
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Backend</h3>
+            <p class="text-neutral-400 mb-2">
+              Built with Django, providing a robust foundation for the e-commerce platform:
+            </p>
+            <ul class="list-disc list-inside text-neutral-400">
+              <li>Django models for products, users, and orders</li>
+              <li>User authentication and authorization</li>
+              <li>Stripe payment integration</li>
+              <li>Admin interface for content management</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Frontend</h3>
+            <p class="text-neutral-400 mb-2">
+              Responsive design built with modern web technologies:
+            </p>
+            <ul class="list-disc list-inside text-neutral-400">
+              <li>Bootstrap for responsive layout</li>
+              <li>HTML5 and CSS3 for structure and styling</li>
+              <li>JavaScript for interactive features</li>
+              <li>Mobile-first design approach</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout> 

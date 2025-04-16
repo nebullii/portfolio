@@ -1,37 +1,32 @@
 import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
-import netlify from "@astrojs/netlify";
-import robotsTxt from "astro-robots-txt";
-import UnoCSS from "@unocss/astro";
-import icon from "astro-icon";
-
-import solidJs from "@astrojs/solid-js";
-import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
-
+import mdx from "@astrojs/mdx";
+import solid from "@astrojs/solid-js";
 import svelte from "@astrojs/svelte";
+import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
+import robotsTxt from "astro-robots-txt";
+import icon from "astro-icon";
+import UnoCSS from "@unocss/astro";
+import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gianmarcocavallo.com/",
   integrations: [
-    sitemap(),
-    robotsTxt({
-      sitemap: [
-        "https://gianmarcocavallo.com/sitemap-index.xml",
-        "https://gianmarcocavallo.com/sitemap-0.xml",
-      ],
-    }),
-    solidJs(),
-    UnoCSS({ injectReset: true }),
-    icon(),
+    mdx(),
+    solid(),
     svelte(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    sitemap(),
+    robotsTxt(),
+    icon(),
+    UnoCSS({
+      injectReset: true
+    }),
   ],
+  site: "https://example.com",
   markdown: {
     remarkPlugins: [remarkReadingTime],
-  },
-  output: "server",
-  adapter: netlify({ edgeMiddleware: true }),
-  vite: {
-    assetsInclude: "**/*.riv",
   },
 });

@@ -2,19 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card/index.astro";
 import IntroCard from "../components/IntroCard.astro";
-import ContactsCard from "../components/ContactsCard.astro";
 import TimeZone from "../components/TimeZoneCard.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Now from "../components/Now.astro";
-import Globe from "../components/Globe";
-import { getCollection } from "astro:content";
-import { formatDate } from "../lib/helpers";
-
-const posts = (await getCollection("blog"))?.sort(
-  (blogEntryA, blogEntryB) =>
-    (blogEntryB.data.pubDate || new Date()).getTime() -
-    (blogEntryA.data.pubDate || new Date()).getTime()
-);
+import { Icon } from 'astro-icon/components';
 ---
 
 <script>
@@ -41,62 +32,50 @@ const posts = (await getCollection("blog"))?.sort(
 
 <Layout
   title="Neha Chaudhari - Software Developer"
-  description="I'm a software developer specializing in backend development, cloud computing, and e-commerce solutions. Passionate about building scalable applications and optimizing performance. My primary tools include Ruby, Python, Django, React, AWS, and PostgreSQL."
+  description="I'm a software developer specializing in backend development, cloud computing, and e-commerce solutions. Passionate about building scalable applications and optimizing performance."
 >
-  <main
-    class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
-  >
-    <IntroCard />
-    <AboutMe />
-    <ContactsCard />
-    <TimeZone />
-    <Now />
-    <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-1"
-      title="City I Belong To"
-      href="travel"
-      colorText="text-neutral-900"
-    >
-      <div class="h-full w-full absolute inset-0 -z-10">
-        <Globe client:load />
+  <main class="text-white m-auto p-4 grid gap-2 max-w-[1200px] relative w-full py-12">
+    <div class="grid grid-cols-3 gap-2">
+      {/* First row - Welcome and About */}
+      <div class="col-span-2">
+        <IntroCard />
       </div>
-    </Card>
-    <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-2 flex gap-4"
-      title="Projects"
-      href="/blog"
-    >
-      <div class="flex flex-col gap-4">
-        {
-          posts?.slice(0, 3).map((post) => (
-            <div class="list-none w-full text-neutral-100 hover:text-neutral-400 ease-in-out transition-colors border-b-neutral-400 border-dashed border-b-1 my-0">
-              <p class="inline-block whitespace-nowrap text-xs">
-                {post.data.title}
-              </p>
-              {post.data.pubDate && (
-                <time
-                  class="text-right tabular-nums text-xs"
-                  datetime={post.data.pubDate.toISOString()}
-                  data-date={post.data.pubDate.toISOString()}
-                >
-                  {formatDate(post.data.pubDate)}
-                </time>
-              )}
+      <div class="col-span-1 row-span-3">
+        <AboutMe />
+      </div>
+
+      {/* Small cards row */}
+      <div class="col-span-1">
+        <TimeZone />
+      </div>
+      <div class="col-span-1">
+        <Card>
+          <a href="/travel" class="block h-full group">
+            <div class="flex items-center justify-between h-[45px]">
+              <h3 class="text-xl font-serif text-neutral-200">City I Belong To</h3>
+              <Icon name="ri:arrow-right-up-line" class="h-6 text-neutral-200 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out duration-100" />
             </div>
-          ))
-        }
+          </a>
+        </Card>
       </div>
-    </Card>
-    <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
-      <p class="text-xs">
-        © 2025 · Crafted with ♥️ using <a
-          href="https://astro.build/"
-          target="_blank"
-          class="text-red-500">Astro</a
-        > by Neha Chaudhari.
-      </p>
-    </Card>
+
+      {/* Now section */}
+      <div class="col-span-2">
+        <Now />
+      </div>
+
+      {/* Footer */}
+      <div class="col-span-2">
+        <Card>
+          <p class="text-xs text-neutral-500">
+            © 2025 · Crafted with ♥️ using <a
+              href="https://astro.build/"
+              target="_blank"
+              class="text-red-500">Astro</a
+            > by Neha Chaudhari.
+          </p>
+        </Card>
+      </div>
+    </div>
   </main>
 </Layout>

@@ -1,0 +1,195 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card/index.astro";
+
+const canonicalURL = new URL("/projects", Astro.site);
+---
+
+<Layout
+  title="Software Development Projects | Neha Chaudhari - Full Stack Developer"
+  description="Explore my portfolio of full-stack development projects including a Django e-commerce platform and MERN stack applications. View detailed case studies showcasing expertise in Python, React, Node.js, and modern web technologies."
+  canonical={canonicalURL}
+>
+  <main class="text-white m-auto p-4 grid gap-2 max-w-6xl relative w-full py-12">
+    <header class="mb-8">
+      <h1 class="text-4xl font-bold mb-4">Featured Projects</h1>
+      <p class="text-xl text-neutral-400">A showcase of my software development work and technical expertise</p>
+    </header>
+    
+    <div class="grid gap-6 md:grid-cols-2">
+      <article
+        class="card h-full flex-1"
+        itemscope
+        itemtype="https://schema.org/SoftwareApplication"
+      >
+        <Card
+          colSpan="md:col-span-1"
+          rowSpan="md:row-span-1"
+          title="Indoor Plant Store"
+          className="h-full"
+        >
+          <div class="flex flex-col gap-4">
+            <p class="text-sm text-neutral-400" itemprop="description">
+              A Django-based e-commerce platform for indoor plants with secure payment processing and admin dashboard.
+            </p>
+            <section class="mt-4" aria-label="Key Features">
+              <h2 class="text-sm font-semibold mb-2">Key Features:</h2>
+              <ul class="list-disc list-inside text-sm text-neutral-400">
+                <li>User authentication and authorization</li>
+                <li>Stripe payment processing integration</li>
+                <li>Product catalog with categories</li>
+                <li>Responsive design with mobile-first approach</li>
+                <li>Shopping cart functionality</li>
+                <li>Admin dashboard for product management</li>
+              </ul>
+            </section>
+            <section class="mt-4" aria-label="Technical Details">
+              <h2 class="text-sm font-semibold mb-2">Technical Implementation:</h2>
+              <ul class="list-disc list-inside text-sm text-neutral-400">
+                <li>Django for backend development</li>
+                <li>Bootstrap for responsive design</li>
+                <li>Stripe for secure payments</li>
+                <li>Python for business logic</li>
+              </ul>
+            </section>
+            <section class="mt-4" aria-label="Technologies Used">
+              <h2 class="text-sm font-semibold mb-2">Technologies:</h2>
+              <div class="flex flex-wrap gap-2" itemprop="applicationCategory">
+                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Django</span>
+                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Python</span>
+                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Bootstrap</span>
+                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Stripe</span>
+              </div>
+            </section>
+            <a
+              href="/projects/indoor-plant-store"
+              class="text-blue-400 hover:text-blue-300 mt-4 inline-block"
+              itemprop="url"
+              aria-label="Read more about Indoor Plant Store project"
+              >Read More →</a
+            >
+          </div>
+        </Card>
+      </article>
+
+      <article
+        class="card h-full flex-1"
+        itemscope
+        itemtype="https://schema.org/WebApplication"
+      >
+        <Card
+          colSpan="md:col-span-1"
+          rowSpan="md:row-span-1"
+          title="Nutrition Glow"
+          className="h-full"
+        >
+          <div class="flex flex-col gap-4">
+            <p class="text-sm text-neutral-400" itemprop="description">
+              Transform your health through real food. A platform dedicated to mindful nutrition, helping you discover how natural, whole foods can enhance your physical and mental wellbeing.
+            </p>
+            <section class="mt-4" aria-label="Key Features">
+              <h2 class="text-sm font-semibold mb-2">Key Features:</h2>
+              <ul class="list-disc list-inside text-sm text-neutral-400">
+                <li>Article categories (Real Food, Brain Food, Glucose Guide, Muscle & Protein)</li>
+                <li>Latest articles and blog posts</li>
+                <li>Recipe collection with nutritional information</li>
+                <li>Newsletter subscription</li>
+                <li>Responsive design with dark mode support</li>
+                <li>SEO optimization</li>
+              </ul>
+            </section>
+            <section class="mt-4" aria-label="Technical Details">
+              <h2 class="text-sm font-semibold mb-2">Technical Implementation:</h2>
+              <ul class="list-disc list-inside text-sm text-neutral-400">
+                <li>React for dynamic user interface</li>
+                <li>Node.js with Express for backend</li>
+                <li>MongoDB for content storage</li>
+                <li>Tailwind CSS for styling</li>
+              </ul>
+            </section>
+            <section class="mt-4" aria-label="Technologies Used">
+              <h2 class="text-sm font-semibold mb-2">Technologies:</h2>
+              <div class="flex flex-wrap gap-2" itemprop="applicationCategory">
+                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">React</span>
+                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Node.js</span>
+                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">MongoDB</span>
+                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Express</span>
+                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Tailwind CSS</span>
+              </div>
+            </section>
+            <a
+              href="/projects/nutrition-glow"
+              class="text-blue-400 hover:text-blue-300 mt-4 inline-block"
+              itemprop="url"
+              aria-label="Read more about Nutrition Glow project"
+              >Read More →</a
+            >
+          </div>
+        </Card>
+      </article>
+    </div>
+  </main>
+</Layout>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Software Development Projects - Neha Chaudhari",
+    "description": "A showcase of full-stack development projects including Django e-commerce and MERN stack applications",
+    "author": {
+      "@type": "Person",
+      "name": "Neha Chaudhari",
+      "jobTitle": "Full Stack Developer",
+      "url": "https://nehachaudhari.com"
+    },
+    "mainEntity": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Indoor Plant Store",
+        "description": "A Django-based e-commerce platform for indoor plants with secure payment processing and admin dashboard",
+        "applicationCategory": "E-commerce",
+        "operatingSystem": "Web",
+        "author": {
+          "@type": "Person",
+          "name": "Neha Chaudhari"
+        },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock"
+        },
+        "programmingLanguage": ["Python", "Django"],
+        "featureList": [
+          "User authentication",
+          "Stripe payment processing",
+          "Product catalog",
+          "Shopping cart",
+          "Admin dashboard"
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Nutrition Glow",
+        "description": "A platform dedicated to mindful nutrition and health, featuring articles, recipes, and nutritional information",
+        "applicationCategory": "Health & Wellness",
+        "operatingSystem": "Web",
+        "author": {
+          "@type": "Person",
+          "name": "Neha Chaudhari"
+        },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock"
+        },
+        "programmingLanguage": ["JavaScript", "React", "Node.js"],
+        "featureList": [
+          "Article categories",
+          "Recipe collection",
+          "Newsletter subscription",
+          "Dark mode support",
+          "SEO optimization"
+        ]
+      }
+    ]
+  }
+</script> 

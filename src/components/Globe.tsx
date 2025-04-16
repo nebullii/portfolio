@@ -2,7 +2,11 @@ import { onMount } from "solid-js";
 import * as d3 from "d3";
 import worldData from "../lib/world.json";
 
-const GlobeComponent = () => {
+interface Props {
+  isFullSize?: boolean;
+}
+
+const GlobeComponent = (props: Props) => {
   let mapContainer: HTMLDivElement | undefined;
 
   const visitedCountries = ["India"];
@@ -11,12 +15,12 @@ const GlobeComponent = () => {
     if (!mapContainer) return;
 
     const width = mapContainer.clientWidth;
-    const height = 500;
+    const height = mapContainer.clientHeight;
     const sensitivity = 75;
 
     let projection = d3
       .geoOrthographic()
-      .scale(250)
+      .scale(props.isFullSize ? 200 : 35)
       .center([0, 0])
       .rotate([0, -30])
       .translate([width / 2, height / 2]);
@@ -27,8 +31,10 @@ const GlobeComponent = () => {
     let svg = d3
       .select(mapContainer)
       .append("svg")
-      .attr("width", width)
-      .attr("height", height);
+      .attr("width", "100%")
+      .attr("height", "100%")
+      .attr("preserveAspectRatio", "xMidYMid meet")
+      .attr("viewBox", `0 0 ${width} ${height}`);
 
     svg
       .append("circle")
@@ -65,8 +71,8 @@ const GlobeComponent = () => {
   });
 
   return (
-    <div class="flex flex-col text-white justify-center items-center w-full h-full">
-      <div class="w-full" ref={mapContainer}></div>
+    <div class={`w-full h-full flex items-center justify-center ${props.isFullSize ? 'min-h-[400px]' : ''}`}>
+      <div class={props.isFullSize ? 'w-full h-full' : 'w-[80px] h-[80px]'} ref={mapContainer}></div>
     </div>
   );
 };

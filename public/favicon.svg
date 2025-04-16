@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Developer Portfolio Favicon</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#1A1A1A" x="0" y="0" width="256" height="256" rx="32"/>
+        <g transform="translate(58.000000, 58.000000)" fill="#4F46E5" fill-rule="nonzero">
+            <path d="M52.4,116.8L0,64.4L52.4,12L64.4,24L24,64.4L64.4,104.8L52.4,116.8Z"/>
+            <path d="M87.6,116.8L75.6,104.8L116,64.4L75.6,24L87.6,12L140,64.4L87.6,116.8Z"/>
+        </g>
+    </g>
+</svg> 

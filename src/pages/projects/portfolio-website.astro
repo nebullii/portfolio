@@ -1,0 +1,173 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card/index.astro";
+---
+
+<Layout
+  title="Portfolio Website - Neha Chaudhari"
+  description="A detailed case study of my personal portfolio website built with Astro."
+>
+  <main class="text-white m-auto p-8 max-w-4xl">
+    <a
+      href="/projects"
+      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 mb-8 border-1 border-solid border-neutral-600 rounded-lg inline-block"
+      >Back to Projects</a
+    >
+
+    <div class="space-y-8">
+      <section>
+        <h1 class="text-4xl font-bold mb-4">Portfolio Website</h1>
+        <p class="text-xl text-neutral-400 mb-6">
+          A modern, performant portfolio website built with Astro, featuring interactive 3D visualizations and optimized performance.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">Astro</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">TypeScript</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">D3.js</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">SolidJS</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">UnoCSS</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">Netlify</span>
+        </div>
+        <a
+          href="/"
+          class="text-blue-400 hover:text-blue-300"
+          >View Project →</a
+        >
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
+        <p class="text-neutral-400 mb-4">
+          This portfolio website showcases my skills and projects while demonstrating modern web development practices. Built with Astro for optimal performance and featuring interactive 3D visualizations, it represents a perfect blend of aesthetics and functionality.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Key Metrics</h3>
+            <ul class="space-y-2">
+              <li class="flex justify-between">
+                <span>Page Load Time</span>
+                <span class="text-blue-400">1.2s</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Lighthouse Score</span>
+                <span class="text-blue-400">98/100</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Bundle Size</span>
+                <span class="text-blue-400">45KB</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Technical Stack</h3>
+            <ul class="space-y-2">
+              <li>Astro for static site generation</li>
+              <li>TypeScript for type safety</li>
+              <li>D3.js for data visualization</li>
+              <li>SolidJS for interactive components</li>
+              <li>UnoCSS for styling</li>
+              <li>Netlify for deployment</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Card title="3D Globe Visualization">
+            <p class="text-sm text-neutral-400">
+              Interactive 3D globe built with D3.js showing visited countries and locations.
+            </p>
+          </Card>
+          <Card title="Responsive Design">
+            <p class="text-sm text-neutral-400">
+              Fully responsive layout using UnoCSS with mobile-first approach.
+            </p>
+          </Card>
+          <Card title="Blog System">
+            <p class="text-sm text-neutral-400">
+              Content management system with markdown support and RSS feed.
+            </p>
+          </Card>
+          <Card title="Performance">
+            <p class="text-sm text-neutral-400">
+              Optimized for speed with code splitting, lazy loading, and minimal JavaScript.
+            </p>
+          </Card>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Technical Implementation</h2>
+        <div class="space-y-4">
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Frontend Architecture</h3>
+            <p class="text-neutral-400 mb-2">
+              The website is built with Astro, focusing on performance and maintainability:
+            </p>
+            <ul class="list-disc list-inside text-neutral-400">
+              <li>Component-based architecture with Astro components</li>
+              <li>TypeScript for type safety and better development experience</li>
+              <li>UnoCSS for utility-first styling</li>
+              <li>D3.js for interactive data visualization</li>
+              <li>SolidJS for interactive components</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Performance Optimization</h3>
+            <p class="text-neutral-400 mb-2">
+              Multiple optimization techniques were implemented to ensure fast loading times:
+            </p>
+            <ul class="list-disc list-inside text-neutral-400">
+              <li>Static site generation with Astro</li>
+              <li>Code splitting and lazy loading</li>
+              <li>Image optimization and responsive images</li>
+              <li>Minimal JavaScript usage</li>
+              <li>Efficient CSS with UnoCSS</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Deployment & CI/CD</h3>
+            <p class="text-neutral-400 mb-2">
+              The website is deployed on Netlify with automated workflows:
+            </p>
+            <ul class="list-disc list-inside text-neutral-400">
+              <li>Netlify for hosting and deployment</li>
+              <li>Automated builds with GitHub Actions</li>
+              <li>Continuous deployment pipeline</li>
+              <li>Performance monitoring</li>
+              <li>SSL and security headers</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Challenges & Solutions</h2>
+        <div class="space-y-4">
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">3D Visualization Performance</h3>
+            <p class="text-neutral-400">
+              Optimized D3.js globe visualization with efficient rendering techniques and canvas-based rendering for better performance.
+            </p>
+          </div>
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Responsive Design</h3>
+            <p class="text-neutral-400">
+              Implemented a mobile-first approach with UnoCSS, ensuring consistent experience across all devices.
+            </p>
+          </div>
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">SEO Optimization</h3>
+            <p class="text-neutral-400">
+              Enhanced SEO with proper meta tags, structured data, and sitemap generation while maintaining performance.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout> 

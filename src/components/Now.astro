@@ -3,12 +3,14 @@ import Card from "./Card/index.astro";
 import Pulse from "./Pulse.astro";
 ---
 
-<Card colSpan="md:col-span-2" rowSpan="md:row-span-2">
-  <div class="flex justify-between w-full items-start mb-2">
-    <div class="flex flex-col">
-      <h2 class="text-lg">Now</h2>
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
+  <div class="flex flex-col gap-8 py-3">
+    <div class="flex items-center gap-4">
+      <Pulse />
+      <h2 class="text-xl font-medium text-gray-200">Now</h2>
     </div>
-    <Pulse />
+    <p class="text-lg leading-relaxed text-gray-300">
+      Currently working as a Teaching Assistant, focusing on C# Desktop App development using the .NET Framework. I'm passionate about helping students understand software development principles and best practices.
+    </p>
   </div>
-  <p class="text-base">Currently working as a Teaching Assistant to help students learn C# Desktop App development using .NET Framework.</p>
 </Card>

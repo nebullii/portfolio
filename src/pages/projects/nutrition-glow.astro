@@ -1,0 +1,104 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card/index.astro";
+---
+
+<Layout
+  title="Nutrition Glow - Neha Chaudhari"
+  description="A nutrition-focused platform for health and wellness."
+>
+  <main class="text-white m-auto p-8 max-w-4xl py-12">
+    <a
+      href="/projects"
+      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 mb-8 border-1 border-solid border-neutral-600 rounded-lg inline-block"
+      >Back to Projects</a
+    >
+
+    <div class="space-y-8">
+      <section>
+        <h1 class="text-4xl font-bold mb-4">Nutrition Glow</h1>
+        <p class="text-xl text-neutral-400 mb-6">
+          Transform your health through real food. A platform dedicated to mindful nutrition, helping you discover how natural, whole foods can enhance your physical and mental wellbeing.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">React</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">Node.js</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">MongoDB</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">Express</span>
+          <span class="px-3 py-1 bg-neutral-800 rounded-full text-sm">Tailwind CSS</span>
+        </div>
+        <div class="flex gap-4">
+          <a
+            href="https://github.com/yourusername/nutrition-glow"
+            target="_blank"
+            class="text-blue-400 hover:text-blue-300"
+            >View on GitHub →</a
+          >
+          <a
+            href="https://nutritionglow.life/"
+            target="_blank"
+            class="text-blue-400 hover:text-blue-300"
+            >Live Demo →</a
+          >
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Card title="Article Categories">
+            <p class="text-sm text-neutral-400">
+              Organized content into categories: Real Food, Brain Food, Glucose Guide, and Muscle & Protein.
+            </p>
+          </Card>
+          <Card title="Latest Articles">
+            <p class="text-sm text-neutral-400">
+              Regularly updated blog posts about nutrition, recipes, and health tips.
+            </p>
+          </Card>
+          <Card title="Recipe Collection">
+            <p class="text-sm text-neutral-400">
+              Curated collection of healthy recipes with detailed instructions and nutritional information.
+            </p>
+          </Card>
+          <Card title="Newsletter">
+            <p class="text-sm text-neutral-400">
+              Subscribe to receive updates and stay informed about the latest nutrition insights.
+            </p>
+          </Card>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Technical Implementation</h2>
+        <div class="space-y-4">
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Backend</h3>
+            <p class="text-neutral-400 mb-2">
+              Built with Node.js and Express, providing a robust API for the platform:
+            </p>
+            <ul class="list-disc list-inside text-neutral-400">
+              <li>MongoDB for article and recipe storage</li>
+              <li>User authentication system</li>
+              <li>Content management system</li>
+              <li>Newsletter subscription handling</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-800 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Frontend</h3>
+            <p class="text-neutral-400 mb-2">
+              Modern and responsive design built with React:
+            </p>
+            <ul class="list-disc list-inside text-neutral-400">
+              <li>React for dynamic user interface</li>
+              <li>Tailwind CSS for styling</li>
+              <li>Responsive design for all devices</li>
+              <li>Optimized for performance and SEO</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout> 

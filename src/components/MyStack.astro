@@ -1,5 +1,81 @@
 ---
 import Card from "./Card/index.astro";
+
+interface Skill {
+  name: string;
+  category: string;
+  proficiency: number;
+  description: string;
+}
+
+const skills: Skill[] = [
+  {
+    name: "JavaScript/TypeScript",
+    category: "Languages",
+    proficiency: 90,
+    description: "Strong expertise in modern JavaScript and TypeScript development"
+  },
+  {
+    name: "Python",
+    category: "Languages",
+    proficiency: 85,
+    description: "Experience with Django, Flask, and data processing"
+  },
+  {
+    name: "Ruby",
+    category: "Languages",
+    proficiency: 80,
+    description: "Proficient in Ruby on Rails and Spree Commerce"
+  },
+  {
+    name: "React",
+    category: "Frontend",
+    proficiency: 90,
+    description: "Expert in React with hooks and context API"
+  },
+  {
+    name: "Astro",
+    category: "Frontend",
+    proficiency: 85,
+    description: "Modern static site generation and optimization"
+  },
+  {
+    name: "Django",
+    category: "Backend",
+    proficiency: 85,
+    description: "Full-stack development with Django REST Framework"
+  },
+  {
+    name: "Ruby on Rails",
+    category: "Backend",
+    proficiency: 80,
+    description: "E-commerce development with Spree Commerce"
+  },
+  {
+    name: "AWS",
+    category: "Cloud/DevOps",
+    proficiency: 80,
+    description: "EC2, S3, and cloud infrastructure management"
+  },
+  {
+    name: "Docker",
+    category: "Cloud/DevOps",
+    proficiency: 75,
+    description: "Containerization and deployment"
+  },
+  {
+    name: "PostgreSQL",
+    category: "Databases",
+    proficiency: 85,
+    description: "Database design and optimization"
+  },
+  {
+    name: "MongoDB",
+    category: "Databases",
+    proficiency: 75,
+    description: "NoSQL database management"
+  }
+];
 ---
 
 <Card colSpan="md:col-span-2" rowSpan="md:row-span-1" title="My Stack">
@@ -13,3 +89,24 @@ import Card from "./Card/index.astro";
     <li><strong>React.js</strong></li>
   </ul>
 </Card>
+
+<div class="w-full">
+  <h2 class="text-2xl font-bold mb-6 text-neutral-100">Technical Stack</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {skills.map((skill) => (
+      <div class="bg-neutral-800 p-4 rounded-lg">
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="text-lg font-semibold text-neutral-100">{skill.name}</h3>
+          <span class="text-sm text-neutral-400">{skill.category}</span>
+        </div>
+        <div class="w-full bg-neutral-700 rounded-full h-2 mb-2">
+          <div
+            class="bg-blue-500 h-2 rounded-full"
+            style={`width: ${skill.proficiency}%`}
+          ></div>
+        </div>
+        <p class="text-sm text-neutral-400">{skill.description}</p>
+      </div>
+    ))}
+  </div>
+</div>
