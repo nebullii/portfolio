@@ -1,0 +1,7 @@
+[build]
+  command = "pnpm install --no-frozen-lockfile && pnpm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18.20.8"
+  NPM_FLAGS = "--no-frozen-lockfile" 
