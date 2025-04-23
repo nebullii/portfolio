@@ -9,7 +9,7 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <script>
-  import { stagger, spring, timeline, type TimelineDefinition } from "motion";
+  import { stagger, spring, animate } from "motion";
   import { loaderAnimation } from "../lib/constants";
   const cards = document.querySelectorAll(".card");
 
@@ -27,7 +27,7 @@ import { Icon } from 'astro-icon/components';
     ],
   ];
 
-  timeline(sequence as TimelineDefinition);
+  animate(sequence);
 </script>
 
 <Layout
