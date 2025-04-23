@@ -5,11 +5,11 @@ import Card from "../components/Card/index.astro";
 ---
 
 <script>
-  import { timeline, type TimelineDefinition } from "motion";
+  import { animate, stagger } from "motion";
   import { loaderAnimation } from "../lib/constants";
 
   const sequence = [loaderAnimation];
-  timeline(sequence as TimelineDefinition);
+  animate(sequence);
 </script>
 
 <Layout
