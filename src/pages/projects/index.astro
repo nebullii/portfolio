@@ -1,133 +1,173 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Card from "../../components/Card/index.astro";
+import { Icon } from 'astro-icon/components';
 
 const canonicalURL = new URL("/projects", Astro.site);
 ---
+
+<script>
+  // Add keyboard navigation support
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || (e.metaKey && e.key === '[')) {
+      window.location.href = '/';
+    }
+  });
+</script>
 
 <Layout
   title="Software Development Projects | Neha Chaudhari - Full Stack Developer"
   description="Explore my portfolio of full-stack development projects including a Django e-commerce platform and MERN stack applications. View detailed case studies showcasing expertise in Python, React, Node.js, and modern web technologies."
   canonical={canonicalURL}
 >
-  <main class="text-white m-auto p-4 grid gap-2 max-w-6xl relative w-full py-12">
-    <header class="mb-8">
-      <h1 class="text-4xl font-bold mb-4">Featured Projects</h1>
-      <p class="text-xl text-neutral-400">A showcase of my software development work and technical expertise</p>
-    </header>
-    
-    <div class="grid gap-6 md:grid-cols-2">
-      <article
-        class="card h-full flex-1"
-        itemscope
-        itemtype="https://schema.org/SoftwareApplication"
-      >
-        <Card
-          colSpan="md:col-span-1"
-          rowSpan="md:row-span-1"
-          title="Indoor Plant Store"
-          className="h-full"
-        >
-          <div class="flex flex-col gap-4">
-            <p class="text-sm text-neutral-400" itemprop="description">
-              A Django-based e-commerce platform for indoor plants with secure payment processing and admin dashboard.
-            </p>
-            <section class="mt-4" aria-label="Key Features">
-              <h2 class="text-sm font-semibold mb-2">Key Features:</h2>
-              <ul class="list-disc list-inside text-sm text-neutral-400">
-                <li>User authentication and authorization</li>
-                <li>Stripe payment processing integration</li>
-                <li>Product catalog with categories</li>
-                <li>Responsive design with mobile-first approach</li>
-                <li>Shopping cart functionality</li>
-                <li>Admin dashboard for product management</li>
-              </ul>
-            </section>
-            <section class="mt-4" aria-label="Technical Details">
-              <h2 class="text-sm font-semibold mb-2">Technical Implementation:</h2>
-              <ul class="list-disc list-inside text-sm text-neutral-400">
-                <li>Django for backend development</li>
-                <li>Bootstrap for responsive design</li>
-                <li>Stripe for secure payments</li>
-                <li>Python for business logic</li>
-              </ul>
-            </section>
-            <section class="mt-4" aria-label="Technologies Used">
-              <h2 class="text-sm font-semibold mb-2">Technologies:</h2>
-              <div class="flex flex-wrap gap-2" itemprop="applicationCategory">
-                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Django</span>
-                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Python</span>
-                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Bootstrap</span>
-                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Stripe</span>
-              </div>
-            </section>
-            <a
-              href="/projects/indoor-plant-store"
-              class="text-blue-400 hover:text-blue-300 mt-4 inline-block"
-              itemprop="url"
-              aria-label="Read more about Indoor Plant Store project"
-              >Read More →</a
-            >
-          </div>
-        </Card>
-      </article>
+  <main class="text-white relative overflow-hidden">
+    <!-- Hero Section -->
+    <section class="pt-16 pb-16 px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <div class="mb-8">
+          <a href="/" 
+             class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors duration-300 text-sm">
+            <Icon name="ri:arrow-left-line" class="h-4 w-4" />
+            Back to Home
+          </a>
+        </div>
+        
+        <h1 class="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+          Featured Projects
+        </h1>
+        <p class="text-xl text-neutral-400 mb-12 max-w-2xl mx-auto">
+          A showcase of my software development work and technical expertise
+        </p>
+      </div>
+    </section>
 
-      <article
-        class="card h-full flex-1"
-        itemscope
-        itemtype="https://schema.org/WebApplication"
-      >
-        <Card
-          colSpan="md:col-span-1"
-          rowSpan="md:row-span-1"
-          title="Nutrition Glow"
-          className="h-full"
-        >
-          <div class="flex flex-col gap-4">
-            <p class="text-sm text-neutral-400" itemprop="description">
-              Transform your health through real food. A platform dedicated to mindful nutrition, helping you discover how natural, whole foods can enhance your physical and mental wellbeing.
-            </p>
-            <section class="mt-4" aria-label="Key Features">
-              <h2 class="text-sm font-semibold mb-2">Key Features:</h2>
-              <ul class="list-disc list-inside text-sm text-neutral-400">
-                <li>Article categories (Real Food, Brain Food, Glucose Guide, Muscle & Protein)</li>
-                <li>Latest articles and blog posts</li>
-                <li>Recipe collection with nutritional information</li>
-                <li>Newsletter subscription</li>
-                <li>Responsive design with dark mode support</li>
-                <li>SEO optimization</li>
-              </ul>
-            </section>
-            <section class="mt-4" aria-label="Technical Details">
-              <h2 class="text-sm font-semibold mb-2">Technical Implementation:</h2>
-              <ul class="list-disc list-inside text-sm text-neutral-400">
-                <li>React for dynamic user interface</li>
-                <li>Node.js with Express for backend</li>
-                <li>MongoDB for content storage</li>
-                <li>Tailwind CSS for styling</li>
-              </ul>
-            </section>
-            <section class="mt-4" aria-label="Technologies Used">
-              <h2 class="text-sm font-semibold mb-2">Technologies:</h2>
-              <div class="flex flex-wrap gap-2" itemprop="applicationCategory">
-                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">React</span>
-                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Node.js</span>
-                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">MongoDB</span>
-                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Express</span>
-                <span class="px-2 py-1 bg-neutral-800 rounded text-xs">Tailwind CSS</span>
+    <!-- Projects Section -->
+    <section class="pb-24 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
+          <div class="group bg-gradient-to-br from-neutral-900 to-neutral-800 p-8 rounded-2xl border border-neutral-700 hover:border-neutral-600 transition-all duration-300 hover:scale-105 h-full">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
+                🌱
               </div>
-            </section>
-            <a
-              href="/projects/nutrition-glow"
-              class="text-blue-400 hover:text-blue-300 mt-4 inline-block"
-              itemprop="url"
-              aria-label="Read more about Nutrition Glow project"
-              >Read More →</a
-            >
+              <h2 class="text-2xl font-bold">Indoor Plant Marketplace</h2>
+            </div>
+            
+            <p class="text-neutral-400 mb-6 leading-relaxed">
+              A full-featured e-commerce marketplace with AI-powered recommendations, secure payments, cloud storage, and rich content management capabilities.
+            </p>
+
+            <div class="space-y-4 mb-6">
+              <div>
+                <h3 class="text-sm font-semibold mb-2 text-blue-400">Key Features</h3>
+                <ul class="text-sm text-neutral-400 space-y-1">
+                  <li>• Stripe payment integration with secure transactions</li>
+                  <li>• OpenAI API for intelligent product recommendations</li>
+                  <li>• AWS S3 cloud storage for media files</li>
+                  <li>• Rich text editor with CKEditor integration</li>
+                  <li>• Email notifications via SendGrid</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-sm font-semibold mb-2 text-green-400">Tech Stack</h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Django</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">OpenAI API</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Stripe</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">AWS S3</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">SendGrid</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://nevus.pythonanywhere.com/" target="_blank" 
+               class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105">
+              <Icon name="ri:external-link-line" class="h-4 w-4" />
+              Live Demo
+            </a>
           </div>
-        </Card>
-      </article>
-    </div>
+
+          <div class="group bg-gradient-to-br from-neutral-900 to-neutral-800 p-8 rounded-2xl border border-neutral-700 hover:border-neutral-600 transition-all duration-300 hover:scale-105 h-full">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                🥗
+              </div>
+              <h2 class="text-2xl font-bold">Nutrition Glow</h2>
+            </div>
+            
+            <p class="text-neutral-400 mb-6 leading-relaxed">
+              A modern nutrition platform built with Astro and React, featuring dynamic content management, newsletter integration, and rich text editing capabilities.
+            </p>
+
+            <div class="space-y-4 mb-6">
+              <div>
+                <h3 class="text-sm font-semibold mb-2 text-blue-400">Key Features</h3>
+                <ul class="text-sm text-neutral-400 space-y-1">
+                  <li>• Dynamic content management with rich text editor</li>
+                  <li>• SendGrid email integration for newsletters</li>
+                  <li>• Firebase backend for real-time data</li>
+                  <li>• SEO optimized with modern performance</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-sm font-semibold mb-2 text-green-400">Tech Stack</h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Astro</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">React</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Firebase</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">SendGrid</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Tailwind</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://nutritionglow.life/" target="_blank" 
+               class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105">
+              <Icon name="ri:external-link-line" class="h-4 w-4" />
+              Live Demo
+            </a>
+          </div>
+
+          <div class="group bg-gradient-to-br from-neutral-900 to-neutral-800 p-8 rounded-2xl border border-neutral-700 hover:border-neutral-600 transition-all duration-300 hover:scale-105 h-full">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                🤖
+              </div>
+              <h2 class="text-2xl font-bold">AI Code Review Assistant</h2>
+            </div>
+            
+            <p class="text-neutral-400 mb-6 leading-relaxed">
+              Scalable microservices platform that improves coding practices by 40% through automated analysis and real-time feedback.
+            </p>
+
+            <div class="space-y-4 mb-6">
+              <div>
+                <h3 class="text-sm font-semibold mb-2 text-blue-400">Key Features</h3>
+                <ul class="text-sm text-neutral-400 space-y-1">
+                  <li>• Real-time code analysis and feedback</li>
+                  <li>• Automated code quality scoring</li>
+                  <li>• IDE integration and team collaboration</li>
+                  <li>• Performance optimization suggestions</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-sm font-semibold mb-2 text-green-400">Tech Stack</h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">FastAPI</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Firebase</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">RabbitMQ</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
 

@@ -1,81 +1,355 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card/index.astro";
-import IntroCard from "../components/IntroCard.astro";
-import TimeZone from "../components/TimeZoneCard.astro";
-import AboutMe from "../components/AboutMe.astro";
-import Now from "../components/Now.astro";
 import { Icon } from 'astro-icon/components';
 ---
 
 <script>
   import { stagger, spring, animate } from "motion";
   import { loaderAnimation } from "../lib/constants";
-  const cards = document.querySelectorAll(".card");
 
-  const sequence = [
-    loaderAnimation,
-    [
-      cards,
-      { y: ["40%", "0%"], opacity: [0, 1] },
-      {
-        at: "-0.1",
-        duration: 0.4,
-        delay: stagger(0.3),
-        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
-      },
-    ],
-  ];
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll(".animate-section");
+    const skillBars = document.querySelectorAll(".skill-bar");
+    
+    const sequence = [
+      loaderAnimation,
+      [
+        sections,
+        { y: ["20px", "0px"], opacity: [0, 1] },
+        {
+          at: "-0.2",
+          duration: 0.6,
+          delay: stagger(0.2),
+          easing: spring({ velocity: 100, stiffness: 50, damping: 15 }),
+        },
+      ],
+    ];
 
-  animate(sequence);
+    animate(sequence);
+
+    // Animate skill bars on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const progressBar = entry.target.querySelector('.progress-fill');
+          if (progressBar) {
+            const width = progressBar.dataset.width;
+            animate(progressBar, { width: [`0%`, `${width}%`] }, { duration: 1.2, easing: "ease-out" });
+          }
+        }
+      });
+    });
+
+    skillBars.forEach(bar => observer.observe(bar));
+  });
 </script>
 
 <Layout
   title="Neha Chaudhari - Software Developer"
-  description="I'm a software developer specializing in backend development, cloud computing, and e-commerce solutions. Passionate about building scalable applications and optimizing performance."
+  description="I'm a software developer in backend development, cloud computing, and e-commerce solutions. Passionate about building scalable applications and optimizing performance."
 >
-  <main class="text-white m-auto p-4 grid gap-2 max-w-[1200px] relative w-full py-12">
-    <div class="grid grid-cols-3 gap-2">
-      {/* First row - Welcome and About */}
-      <div class="col-span-2">
-        <IntroCard />
+  <main class="text-white relative overflow-hidden">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative animate-section">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5"></div>
+      <div class="absolute inset-0">
+        <div class="absolute top-20 left-20 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+        <div class="absolute top-40 right-32 w-1 h-1 bg-purple-400 rounded-full animate-pulse" style="animation-delay: 1s"></div>
+        <div class="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-pink-400 rounded-full animate-pulse" style="animation-delay: 2s"></div>
+        <div class="absolute bottom-20 right-20 w-1 h-1 bg-blue-300 rounded-full animate-pulse" style="animation-delay: 3s"></div>
       </div>
-      <div class="col-span-1 row-span-3">
-        <AboutMe />
-      </div>
-
-      {/* Small cards row */}
-      <div class="col-span-1">
-        <TimeZone />
-      </div>
-      <div class="col-span-1">
-        <Card>
-          <a href="/travel" class="block h-full group">
-            <div class="flex items-center justify-between h-[45px]">
-              <h3 class="text-xl font-serif text-neutral-200">City I Belong To</h3>
-              <Icon name="ri:arrow-right-up-line" class="h-6 text-neutral-200 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out duration-100" />
+      
+      <div class="w-[80%] mx-auto text-center relative z-10 px-8">
+        <div class="space-y-12">
+          <!-- Main Content -->
+          <div class="space-y-8">
+            <div class="space-y-6">
+              <h1 class="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Neha Chaudhari
+              </h1>
+              <p class="text-xl lg:text-2xl text-neutral-300 font-light">
+                Software Developer - Backend 
+              </p>
+              <p class="text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+                Building scalable applications with 5+ years of experience in backend development, cloud computing, and e-commerce solutions.
+              </p>
             </div>
+            
+            <div class="flex flex-wrap gap-4 justify-center">
+              <a href="mailto:nebullii3@gmail.com?subject=Hello%20Neha&body=Hi%20Neha,%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards" 
+                 class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                <Icon name="ri:mail-line" class="h-5 w-5" />
+                Get In Touch
+              </a>
+              <a href="/projects" 
+                 class="inline-flex items-center gap-2 border border-neutral-600 hover:border-neutral-400 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-neutral-800">
+                View Projects
+                <Icon name="ri:arrow-right-line" class="h-5 w-5" />
+              </a>
+            </div>
+
+            <div class="flex flex-wrap gap-6 pt-4 justify-center items-center">
+              <span class="text-2xl">☕</span>
+              <a href="https://github.com/nebullii" target="_blank" 
+                 class="text-neutral-400 hover:text-[#333] hover:bg-white hover:p-1 hover:rounded transition-all duration-300">
+                <Icon name="ri:github-fill" class="h-7 w-7" />
+              </a>
+              <a href="https://linkedin.com/in/nehavchaudhari" target="_blank" 
+                 class="text-neutral-400 hover:text-[#0077B5] transition-colors duration-300">
+                <Icon name="ri:linkedin-box-fill" class="h-7 w-7" />
+              </a>
+              <a href="https://medium.com/@nebullii3" target="_blank" 
+                 class="text-neutral-400 hover:text-[#00ab6c] transition-colors duration-300">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                </svg>
+              </a>
+              <a href="/Chaudhari_Neha_Resume.pdf" download 
+                 class="text-neutral-400 hover:text-green-400 transition-colors duration-300">
+                <Icon name="ri:download-line" class="h-7 w-7" />
+              </a>
+              <a href="https://music.apple.com/in/playlist/alegr%C3%ADa/pl.u-e98lGdKIa82Bpry" target="_blank" 
+                 class="inline-flex items-center gap-2 text-neutral-400 hover:text-[#FA243C] transition-colors duration-300 text-sm">
+                <Icon name="ri:music-line" class="h-5 w-5" />
+                Alegría
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
+            <div class="bg-gradient-to-br from-neutral-900/50 to-neutral-800/50 backdrop-blur-sm p-6 rounded-2xl border border-neutral-700">
+              <div class="text-3xl font-bold text-blue-400 mb-2">5+</div>
+              <div class="text-neutral-300 font-medium">Years Experience</div>
+              <div class="text-sm text-neutral-500">Backend Development</div>
+            </div>
+
+            <div class="bg-gradient-to-br from-neutral-900/50 to-neutral-800/50 backdrop-blur-sm p-6 rounded-2xl border border-neutral-700">
+              <div class="text-3xl font-bold text-green-400 mb-2">10+</div>
+              <div class="text-neutral-300 font-medium">Technologies</div>
+              <div class="text-sm text-neutral-500">Full Stack</div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-neutral-900/50 to-neutral-800/50 backdrop-blur-sm p-6 rounded-2xl border border-neutral-700">
+              <div class="text-3xl font-bold text-purple-400 mb-2">15+</div>
+              <div class="text-neutral-300 font-medium">Endpoints</div>
+              <div class="text-sm text-neutral-500">REST API</div>
+            </div>
+          </div>
+
+
+          <!-- Current Focus -->
+          <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm p-6 rounded-2xl border border-neutral-700">
+            <div class="flex items-center justify-center gap-3 mb-3">
+              <Icon name="ri:rocket-line" class="h-5 w-5 text-blue-400" />
+              <span class="text-lg font-semibold text-neutral-200">Currently Available</span>
+            </div>
+            <p class="text-neutral-400 text-center">
+              Open to new opportunities in backend development, cloud engineering, and full-stack roles
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-24 px-4 animate-section">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-4">Technical Expertise</h2>
+          <p class="text-xl text-neutral-400">Technologies I worked with</p>
+        </div>
+
+        <div class="grid gap-8">
+          <!-- Languages -->
+          <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 p-8 rounded-2xl border border-neutral-700 hover:border-neutral-600 transition-all duration-300">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+              <Icon name="ri:code-s-slash-line" class="h-8 w-8 text-blue-400" />
+              Languages
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:code-s-slash-fill" class="h-6 w-6 text-[#3776AB]" />
+                <span class="font-medium">Python</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:file-code-fill" class="h-6 w-6 text-[#CC342D]" />
+                <span class="font-medium">Ruby</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:javascript-fill" class="h-6 w-6 text-[#F7DF1E]" />
+                <span class="font-medium">JavaScript</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:code-fill" class="h-6 w-6 text-[#239120]" />
+                <span class="font-medium">C#</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frameworks -->
+          <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 p-8 rounded-2xl border border-neutral-700 hover:border-neutral-600 transition-all duration-300">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+              <Icon name="ri:tools-line" class="h-8 w-8 text-green-400" />
+              Frameworks
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:leaf-fill" class="h-6 w-6 text-[#092E20]" />
+                <span class="font-medium">Django</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:train-fill" class="h-6 w-6 text-[#CC0000]" />
+                <span class="font-medium">Rails</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:flashlight-fill" class="h-6 w-6 text-[#009688]" />
+                <span class="font-medium">FastAPI</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:reactjs-fill" class="h-6 w-6 text-[#61DAFB]" />
+                <span class="font-medium">React</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cloud & DevOps -->
+          <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 p-8 rounded-2xl border border-neutral-700 hover:border-neutral-600 transition-all duration-300">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+              <Icon name="ri:cloud-line" class="h-8 w-8 text-orange-400" />
+              Cloud & DevOps
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:cloud-fill" class="h-6 w-6 text-[#FF9900]" />
+                <span class="font-medium">AWS</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:archive-fill" class="h-6 w-6 text-[#2496ED]" />
+                <span class="font-medium">Docker</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:git-branch-fill" class="h-6 w-6 text-[#F05032]" />
+                <span class="font-medium">Git</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:settings-3-fill" class="h-6 w-6 text-[#326CE5]" />
+                <span class="font-medium">CI/CD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 p-8 rounded-2xl border border-neutral-700 hover:border-neutral-600 transition-all duration-300">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+              <Icon name="ri:database-line" class="h-8 w-8 text-purple-400" />
+              Databases
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:database-2-fill" class="h-6 w-6 text-[#336791]" />
+                <span class="font-medium">PostgreSQL</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:refresh-fill" class="h-6 w-6 text-[#DC382D]" />
+                <span class="font-medium">Redis</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:leaf-fill" class="h-6 w-6 text-[#47A248]" />
+                <span class="font-medium">MongoDB</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-neutral-800 rounded-lg">
+                <Icon name="ri:database-fill" class="h-6 w-6 text-[#00758F]" />
+                <span class="font-medium">MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Preview -->
+    <section class="py-24 px-4 animate-section">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-4">Featured Projects</h2>
+          <p class="text-xl text-neutral-400">Some of my recent work</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="group bg-gradient-to-br from-neutral-900 to-neutral-800 p-8 rounded-2xl border border-neutral-700 hover:border-neutral-600 transition-all duration-300 hover:scale-105">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
+                🌱
+              </div>
+              <h3 class="text-2xl font-bold">Indoor Plant Marketplace</h3>
+            </div>
+            <p class="text-neutral-400 mb-6">
+              A full-featured e-commerce marketplace with AI-powered recommendations, secure payments, cloud storage, and rich content management capabilities.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Django</span>
+              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">OpenAI API</span>
+              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Stripe</span>
+              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">AWS S3</span>
+            </div>
+            <a href="https://nevus.pythonanywhere.com/" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105">
+              <Icon name="ri:external-link-line" class="h-4 w-4" />
+              Live Demo
+            </a>
+          </div>
+
+          <div class="group bg-gradient-to-br from-neutral-900 to-neutral-800 p-8 rounded-2xl border border-neutral-700 hover:border-neutral-600 transition-all duration-300 hover:scale-105">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                🤖
+              </div>
+              <h3 class="text-2xl font-bold">AI Code Review Assistant</h3>
+            </div>
+            <p class="text-neutral-400 mb-6">
+              Scalable microservices platform that improves coding practices by 40% through automated analysis and real-time feedback.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">FastAPI</span>
+              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Firebase</span>
+              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">RabbitMQ</span>
+            </div>
+            <a href="/projects" class="inline-flex items-center gap-2 border border-neutral-600 hover:border-neutral-400 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-neutral-800">
+              View Details <Icon name="ri:arrow-right-line" class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="/projects" 
+             class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            View All Projects
+            <Icon name="ri:arrow-right-line" class="h-5 w-5" />
           </a>
-        </Card>
+        </div>
       </div>
+    </section>
 
-      {/* Now section */}
-      <div class="col-span-2">
-        <Now />
-      </div>
 
-      {/* Footer */}
-      <div class="col-span-2">
-        <Card>
-          <p class="text-xs text-neutral-500">
-            © 2025 · Crafted with ♥️ using <a
-              href="https://astro.build/"
-              target="_blank"
-              class="text-red-500">Astro</a
-            > by Neha Chaudhari.
-          </p>
-        </Card>
+    <!-- Contact Section -->
+    <section class="py-24 px-4 animate-section">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-8">Let's Work Together</h2>
+        <p class="text-xl text-neutral-400 mb-12 max-w-2xl mx-auto">
+          I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!
+        </p>
+        
+        <div class="flex justify-center">
+          <a href="mailto:nebullii3@gmail.com?subject=Hello%20Neha&body=Hi%20Neha,%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards" 
+             class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Icon name="ri:mail-line" class="h-5 w-5" />
+            Get In Touch
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
+
   </main>
 </Layout>

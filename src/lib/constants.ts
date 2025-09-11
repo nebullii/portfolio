@@ -1,7 +1,7 @@
 export const LINKS = {
   github: "https://github.com/nebullii",
   linkedin: "https://www.linkedin.com/in/nehavchaudhari/",
-  email: "mailto:nebulli@outlook.com",
+  email: "mailto:nebullii3@gmail.com",
 };
 
 export const loaderAnimation = [
