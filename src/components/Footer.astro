@@ -1,31 +1,40 @@
 ---
+import { Icon } from 'astro-icon/components';
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="mt-auto py-6 bg-dark-400">
   <div class="mx-auto max-w-screen-xl px-5">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-gray-300 text-sm">
-        © {currentYear} Wid Luv - Neha
-      </p>
-      <div class="flex gap-4">
-        <a
-          href="https://github.com/nebullii"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-gray-300 hover:text-white transition-colors"
-        >
-          GitHub
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex flex-wrap gap-6 justify-center items-center">
+        <span class="text-2xl">☕</span>
+        <a href="https://github.com/nebullii" target="_blank" 
+           class="text-neutral-400 hover:text-[#333] hover:bg-white hover:p-1 hover:rounded transition-all duration-300">
+          <Icon name="ri:github-fill" class="h-7 w-7" />
         </a>
-        <a
-          href="https://www.linkedin.com/in/nehavchaudhari"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-gray-300 hover:text-white transition-colors"
-        >
-          LinkedIn
+        <a href="https://linkedin.com/in/nehavchaudhari" target="_blank" 
+           class="text-neutral-400 hover:text-[#0077B5] transition-colors duration-300">
+          <Icon name="ri:linkedin-box-fill" class="h-7 w-7" />
+        </a>
+        <a href="https://medium.com/@nebullii3" target="_blank" 
+           class="text-neutral-400 hover:text-[#00ab6c] transition-colors duration-300">
+          <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+          </svg>
+        </a>
+        <a href="/Chaudhari_Neha_Resume.pdf" download 
+           class="text-neutral-400 hover:text-green-400 transition-colors duration-300">
+          <Icon name="ri:download-line" class="h-7 w-7" />
+        </a>
+        <a href="https://music.apple.com/in/playlist/alegr%C3%ADa/pl.u-e98lGdKIa82Bpry" target="_blank" 
+           class="inline-flex items-center gap-2 text-neutral-400 hover:text-[#FA243C] transition-colors duration-300 text-sm">
+          <Icon name="ri:music-line" class="h-5 w-5" />
+          Alegría
         </a>
       </div>
+      <p class="text-neutral-500 text-sm">
+        © {currentYear} Neha Chaudhari
+      </p>
     </div>
   </div>
 </footer> 
