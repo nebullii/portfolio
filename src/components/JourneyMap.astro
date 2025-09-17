@@ -1,0 +1,70 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="journey-map">
+  <div class="p-6">
+    <div class="text-center mb-6">
+      <h3 class="text-xl font-semibold mb-2">Journey</h3>
+      <p class="text-sm text-neutral-400">Asansol → Mumbai → Worcester</p>
+    </div>
+    
+    <!-- Journey path -->
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 max-w-4xl mx-auto">
+      
+      <!-- Asansol, India -->
+      <div class="flex flex-col items-center text-center">
+        <div class="w-10 h-10 bg-neutral-700 rounded-full flex items-center justify-center mb-2">
+          <Icon name="ri:home-line" class="h-4 w-4 text-neutral-300" />
+        </div>
+        <h4 class="font-medium text-sm">Asansol</h4>
+        <p class="text-xs text-neutral-500">India</p>
+      </div>
+
+      <!-- Connection line 1 -->
+      <div class="hidden lg:flex flex-1 items-center justify-center">
+        <div class="w-full h-px bg-neutral-600"></div>
+      </div>
+      
+      <!-- Mobile connection indicator -->
+      <div class="lg:hidden">
+        <div class="w-px h-8 bg-neutral-600"></div>
+      </div>
+
+      <!-- Mumbai, India -->
+      <div class="flex flex-col items-center text-center">
+        <div class="w-10 h-10 bg-neutral-700 rounded-full flex items-center justify-center mb-2">
+          <Icon name="ri:building-line" class="h-4 w-4 text-neutral-300" />
+        </div>
+        <h4 class="font-medium text-sm">Mumbai</h4>
+        <p class="text-xs text-neutral-500">India</p>
+      </div>
+
+      <!-- Connection line 2 -->
+      <div class="hidden lg:flex flex-1 items-center justify-center">
+        <div class="w-full h-px bg-neutral-600"></div>
+      </div>
+      
+      <!-- Mobile connection indicator -->
+      <div class="lg:hidden">
+        <div class="w-px h-8 bg-neutral-600"></div>
+      </div>
+
+      <!-- Worcester, USA -->
+      <div class="flex flex-col items-center text-center">
+        <div class="w-10 h-10 bg-neutral-700 rounded-full flex items-center justify-center mb-2">
+          <Icon name="ri:graduation-cap-line" class="h-4 w-4 text-neutral-300" />
+        </div>
+        <h4 class="font-medium text-sm">Worcester</h4>
+        <p class="text-xs text-neutral-500">USA</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .journey-map {
+    @apply bg-neutral-900/50 border border-neutral-700 rounded-lg;
+  }
+</style>
