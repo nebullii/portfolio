@@ -82,10 +82,10 @@ import { Icon } from 'astro-icon/components';
                 <Icon name="ri:mail-line" class="h-5 w-5" />
                 Get In Touch
               </a>
-              <a href="/projects" 
+              <a href="https://github.com/nebullii" target="_blank"
                  class="inline-flex items-center gap-2 border border-neutral-600 hover:border-neutral-400 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-neutral-800">
-                View Projects
-                <Icon name="ri:arrow-right-line" class="h-5 w-5" />
+                <Icon name="ri:github-line" class="h-5 w-5" />
+                View GitHub
               </a>
             </div>
 
@@ -151,9 +151,7 @@ import { Icon } from 'astro-icon/components';
               <Icon name="ri:rocket-line" class="h-5 w-5 text-blue-400" />
               <span class="text-lg font-semibold text-neutral-200">Currently Available</span>
             </div>
-            <p class="text-neutral-400 text-center">
-              Open to new opportunities in backend development, cloud engineering, and full-stack roles
-            </p>
+            <p class="text-neutral-400 text-center">Open to backend, cloud, integration, and full-stack roles without sponsorship until August 2029</p>
           </div>
 
         </div>
@@ -292,19 +290,48 @@ import { Icon } from 'astro-icon/components';
               </div>
               <h3 class="text-2xl font-bold">Indoor Plant Marketplace</h3>
             </div>
-            <p class="text-neutral-400 mb-6">
-              A full-featured e-commerce marketplace with AI-powered recommendations, secure payments, cloud storage, and rich content management capabilities.
+            <p class="text-neutral-400 mb-4">
+              Full-featured e-commerce marketplace with AI-powered recommendations, secure payments, and cloud storage.
             </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Django</span>
-              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">OpenAI API</span>
-              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Stripe</span>
-              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">AWS S3</span>
+
+            <div class="space-y-3 mb-6">
+              <div>
+                <h4 class="text-sm font-semibold text-neutral-300 mb-2">Tech Stack</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Django</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">OpenAI API</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Stripe</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">AWS S3</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">PostgreSQL</span>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-semibold text-neutral-300 mb-2">Key Features</h4>
+                <ul class="text-sm text-neutral-400 space-y-1">
+                  <li>• AI-powered plant recommendations</li>
+                  <li>• Secure payment processing with Stripe</li>
+                  <li>• Rich content management system</li>
+                  <li>• Cloud-based image storage</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-semibold text-neutral-300 mb-2">Impact</h4>
+                <p class="text-sm text-green-400">Complete e-commerce solution with integrated payment processing and AI features</p>
+              </div>
             </div>
-            <a href="https://nevus.pythonanywhere.com/" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105">
-              <Icon name="ri:external-link-line" class="h-4 w-4" />
-              Live Demo
-            </a>
+
+            <div class="flex gap-3">
+              <a href="https://nevus.pythonanywhere.com/" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105">
+                <Icon name="ri:external-link-line" class="h-4 w-4" />
+                Live Demo
+              </a>
+              <a href="https://github.com/nebullii/Indoor-Plants" target="_blank" class="inline-flex items-center gap-2 border border-neutral-600 hover:border-neutral-400 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-neutral-800">
+                <Icon name="ri:github-line" class="h-4 w-4" />
+                GitHub
+              </a>
+            </div>
           </div>
 
           <div class="group bg-gradient-to-br from-neutral-900 to-neutral-800 p-8 rounded-2xl border border-neutral-700 hover:border-neutral-600 transition-all duration-300 hover:scale-105">
@@ -314,27 +341,47 @@ import { Icon } from 'astro-icon/components';
               </div>
               <h3 class="text-2xl font-bold">AI Code Review Assistant</h3>
             </div>
-            <p class="text-neutral-400 mb-6">
-              Scalable microservices platform that improves coding practices by 40% through automated analysis and real-time feedback.
+            <p class="text-neutral-400 mb-4">
+              Scalable microservices platform that improves coding practices through automated analysis and real-time feedback.
             </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">FastAPI</span>
-              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Firebase</span>
-              <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">RabbitMQ</span>
+
+            <div class="space-y-3 mb-6">
+              <div>
+                <h4 class="text-sm font-semibold text-neutral-300 mb-2">Tech Stack</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">FastAPI</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Firebase</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">RabbitMQ</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">PostgreSQL</span>
+                  <span class="px-3 py-1 bg-neutral-700 rounded-full text-sm">Redis</span>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-sm font-semibold text-neutral-300 mb-2">Key Features</h4>
+                <ul class="text-sm text-neutral-400 space-y-1">
+                  <li>• Real-time code analysis and feedback</li>
+                  <li>• Scalable microservices architecture</li>
+                  <li>• Automated code quality scoring</li>
+                  <li>• Integration with popular IDEs</li>
+                </ul>
+              </div>
+
             </div>
-            <a href="/projects" class="inline-flex items-center gap-2 border border-neutral-600 hover:border-neutral-400 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-neutral-800">
-              View Details <Icon name="ri:arrow-right-line" class="h-4 w-4" />
-            </a>
+
+            <div class="flex gap-3">
+              <a href="#" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105">
+                <Icon name="ri:external-link-line" class="h-4 w-4" />
+                Live Demo
+              </a>
+              <a href="https://github.com/nebullii/ai-code-review-assistant" target="_blank" class="inline-flex items-center gap-2 border border-neutral-600 hover:border-neutral-400 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-neutral-800">
+                <Icon name="ri:github-line" class="h-4 w-4" />
+                GitHub
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="text-center mt-12">
-          <a href="/projects" 
-             class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
-            View All Projects
-            <Icon name="ri:arrow-right-line" class="h-5 w-5" />
-          </a>
-        </div>
       </div>
     </section>
 
