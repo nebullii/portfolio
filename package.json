@@ -34,6 +34,7 @@
     "motion": "^12.7.3",
     "reading-time": "^1.5.0",
     "sanitize-html": "^2.11.0",
+    "sharp": "^0.34.4",
     "solid-js": "^1.8.15",
     "svelte": "^4.2.7",
     "unocss": "^0.58.0"
