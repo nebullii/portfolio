@@ -25,7 +25,7 @@ export default defineConfig({
       injectReset: true
     }),
   ],
-  site: "https://example.com",
+  site: "https://portfolio-chaudhari.netlify.app",
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
