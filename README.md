@@ -10,7 +10,15 @@ A beautiful, accessible, and SEO-optimized portfolio website template built with
 
 ## Live Demo
 
-Check out the live demo: **[https://portfolio-chaudhari.netlify.app/](https://portfolio-chaudhari.netlify.app/)**
+See an example of this template in action: **[https://portfolio-chaudhari.netlify.app/](https://portfolio-chaudhari.netlify.app/)**
+
+> **Note:** This is the original creator's portfolio. Your portfolio will be uniquely yours once you customize it!
+
+---
+
+## First Time Setup
+
+**After cloning this template**, see the [TEMPLATE_SETUP.md](./TEMPLATE_SETUP.md) file for a complete step-by-step customization checklist.
 
 ---
 

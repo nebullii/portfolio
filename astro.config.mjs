@@ -25,7 +25,7 @@ export default defineConfig({
       injectReset: true
     }),
   ],
-  site: "https://portfolio-chaudhari.netlify.app",
+  site: "https://your-site-url.netlify.app", // TODO: Update this after deployment
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
