@@ -6,7 +6,7 @@ A beautiful, accessible, and SEO-optimized portfolio website template built with
 >
 > **Enhanced and maintained by** Neha Chaudhari with significant improvements in accessibility, SEO, and user experience.
 
-![Portfolio Preview](public/preview.png)
+![Portfolio Preview](preview.png)
 
 ## Live Demo
 
