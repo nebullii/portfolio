@@ -710,6 +710,30 @@ See the [LICENSE](LICENSE) file for full details.
 
 ---
 
+## Contributing
+
+**We welcome contributions!**
+
+Feel free to:
+- Tweak the design - Make it your own or create variations
+- Fix bugs - Report or fix issues you find
+- Add features - New sections, animations, or improvements
+- Improve docs - Help make this even more beginner-friendly
+- Enhance accessibility - A11y contributions are highly valued
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+**Ideas we'd love:**
+- Alternative color schemes
+- New layout variations
+- Blog integration guide
+- Video tutorials
+- Translations
+
+Every contribution makes this template better for everyone.
+
+---
+
 ## Show Your Support
 
 If this template helped you create an awesome portfolio:
@@ -717,7 +741,7 @@ If this template helped you create an awesome portfolio:
 - Star this repository on GitHub
 - Share it on Twitter/LinkedIn
 - Tell others about it
-- Contribute improvements
+- Contribute improvements (see [CONTRIBUTING.md](CONTRIBUTING.md))
 
 ---
 
